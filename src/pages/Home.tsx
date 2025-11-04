@@ -7,6 +7,7 @@ const Home = () => {
       <p>ようこそ、ホームページへ！</p>
       <nav>
         <Link to="/about">Aboutページへ</Link>
+        <Link to="/register">Registerページへ</Link>
       </nav>
     </div>
   );
