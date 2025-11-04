@@ -7,7 +7,7 @@ import { Register3 } from './pages/register-3';
 
 export const MyRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.VITE_APP_PATH}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
