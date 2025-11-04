@@ -1,5 +1,10 @@
-import { useState, useTransition } from 'react';
+import { useCallback, useState, useTransition } from 'react';
 
+const submitRegistration = async (name: string, email: string, password: string) => {
+  if (name === '') throw new Error('名前を入力してください');
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  console.log(name, email, password);
+};
 export const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -7,15 +12,14 @@ export const Register = () => {
 
   const [isPending, startTransition] = useTransition();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (isPending) return;
-    startTransition(async () => {
-      if (name === '') throw new Error('名前を入力してください');
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log(name, email, password);
-    });
-  };
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (isPending) return;
+      startTransition(async () => await submitRegistration(name, email, password));
+    },
+    [name, email, password, isPending]
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-12">
