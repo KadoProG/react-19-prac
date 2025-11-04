@@ -1,21 +1,22 @@
-import { useState, useTransition } from 'react';
+import { useState, useActionState } from 'react';
 
 export const Register2 = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [isPending, startTransition] = useTransition();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (isPending) return;
-    startTransition(async () => {
-      if (name === '') throw new Error('名前を入力してください');
+  const [error, submitAction, isPending] = useActionState(
+    async (previousState: string | null, formData: FormData) => {
+      console.log(previousState);
+      if (name === '') return '名前を入力してください';
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log(name, email, password);
-    });
-  };
+      console.log(formData.get('name'));
+      console.log(formData.get('email'));
+      console.log(formData.get('password'));
+      return null;
+    },
+    null
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-12">
@@ -23,7 +24,7 @@ export const Register2 = () => {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">ユーザー登録</h1>
           <form
-            onSubmit={handleSubmit}
+            action={submitAction}
             className={`space-y-6 ${isPending ? 'opacity-75 pointer-events-none' : ''}`}
             aria-disabled={isPending}
           >
@@ -113,6 +114,7 @@ export const Register2 = () => {
               {isPending ? '登録中...' : '登録'}
             </button>
           </form>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
         </div>
       </div>
     </div>
