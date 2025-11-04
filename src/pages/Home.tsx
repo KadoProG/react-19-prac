@@ -9,6 +9,7 @@ const Home = () => {
         <Link to="/about">Aboutページへ</Link>
         <Link to="/register">Registerページへ</Link>
         <Link to="/register2">Register2ページへ</Link>
+        <Link to="/register3">Register3ページへ</Link>
       </nav>
     </div>
   );
