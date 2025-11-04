@@ -109,16 +109,16 @@ export const Register3 = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-2xl">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h1 className="text-2xl font-bold text-gray-900 text-center mb-8">
             ユーザー登録（楽観的更新）
           </h1>
 
           {/* 登録済みユーザーリスト */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">登録済みユーザー</h2>
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">登録済みユーザー</h2>
             <div className="space-y-2 max-h-64 overflow-y-auto">
               {optimisticUsers.length === 0 ? (
                 <p className="text-gray-500 text-sm">まだユーザーが登録されていません</p>
@@ -161,7 +161,7 @@ export const Register3 = () => {
                 placeholder="名前を入力してください"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
                 disabled={isPending}
               />
             </div>
@@ -180,7 +180,7 @@ export const Register3 = () => {
                 autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
                 disabled={isPending}
               />
             </div>
@@ -199,13 +199,13 @@ export const Register3 = () => {
                 autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
                 disabled={isPending}
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:transform-none disabled:hover:scale-100 flex items-center justify-center gap-2"
+              className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 flex items-center justify-center gap-2"
               disabled={isPending}
             >
               {isPending && (
@@ -239,15 +239,15 @@ export const Register3 = () => {
               <p className="text-red-500 text-xs mt-1">楽観的更新が自動的に元に戻されました</p>
             </div>
           )}
-          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-blue-800 text-sm mb-2">
+          <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+            <p className="text-gray-700 text-sm mb-2">
               <strong>楽観的更新の動作:</strong>{' '}
               フォーム送信後、サーバー応答を待たずにユーザーリストに即座に追加されます。
               エラーが発生した場合、自動的に元の状態に戻ります。
             </p>
-            <p className="text-blue-800 text-sm">
+            <p className="text-gray-700 text-sm">
               <strong>アクションオブジェクトパターン:</strong>{' '}
-              <code className="bg-blue-100 px-1 rounded">{'{ type: "add", data: {...} }'}</code>{' '}
+              <code className="bg-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">{'{ type: "add", data: {...} }'}</code>{' '}
               のような形式で、複数の操作（add, update, delete）を一つのreducerで処理できます。
               これは複数の操作タイプを扱う場合に推奨されるパターンです。
             </p>
