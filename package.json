@@ -1,9 +1,9 @@
 {
-  "name": "react19-prac",
+  "name": "react-19-prac",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kadoprog.github.io/react19-prac",
+  "homepage": "https://kadoprog.github.io/react-19-prac",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
