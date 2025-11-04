@@ -8,6 +8,7 @@ const Home = () => {
       <nav>
         <Link to="/about">Aboutページへ</Link>
         <Link to="/register">Registerページへ</Link>
+        <Link to="/register2">Register2ページへ</Link>
       </nav>
     </div>
   );
