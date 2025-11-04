@@ -109,30 +109,30 @@ export const Register3 = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-2xl">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-          <h1 className="text-2xl font-bold text-gray-900 text-center mb-8">
+        <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+          <h1 className="mb-8 text-center text-2xl font-bold text-gray-900">
             ユーザー登録（楽観的更新）
           </h1>
 
           {/* 登録済みユーザーリスト */}
           <div className="mb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">登録済みユーザー</h2>
-            <div className="space-y-2 max-h-64 overflow-y-auto">
+            <h2 className="mb-4 text-lg font-semibold text-gray-800">登録済みユーザー</h2>
+            <div className="max-h-64 space-y-2 overflow-y-auto">
               {optimisticUsers.length === 0 ? (
-                <p className="text-gray-500 text-sm">まだユーザーが登録されていません</p>
+                <p className="text-sm text-gray-500">まだユーザーが登録されていません</p>
               ) : (
                 optimisticUsers.map((user) => (
                   <div
                     key={user.id}
-                    className="bg-gray-50 border border-gray-200 rounded-lg p-4 flex items-center justify-between hover:bg-gray-100 transition-colors"
+                    className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4 transition-colors hover:bg-gray-100"
                   >
                     <div>
                       <p className="font-medium text-gray-900">{user.name}</p>
                       <p className="text-sm text-gray-600">{user.email}</p>
                     </div>
-                    <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded">
+                    <span className="rounded bg-gray-200 px-2 py-1 text-xs text-gray-500">
                       ID: {user.id}
                     </span>
                   </div>
@@ -144,13 +144,13 @@ export const Register3 = () => {
           {/* 登録フォーム */}
           <form
             action={submitAction}
-            className={`space-y-6 ${isPending ? 'opacity-75 pointer-events-none' : ''}`}
+            className={`space-y-6 ${isPending ? 'pointer-events-none opacity-75' : ''}`}
             aria-disabled={isPending}
           >
             <div>
               <label
                 htmlFor="name"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 名前
               </label>
@@ -161,14 +161,14 @@ export const Register3 = () => {
                 placeholder="名前を入力してください"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 メールアドレス
               </label>
@@ -180,14 +180,14 @@ export const Register3 = () => {
                 autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <div>
               <label
                 htmlFor="password"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 パスワード
               </label>
@@ -199,18 +199,18 @@ export const Register3 = () => {
                 autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-3 font-medium text-white transition-colors hover:bg-gray-800 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400"
               disabled={isPending}
             >
               {isPending && (
                 <svg
-                  className="animate-spin h-5 w-5 text-white"
+                  className="h-5 w-5 animate-spin text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -234,20 +234,20 @@ export const Register3 = () => {
             </button>
           </form>
           {error && (
-            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-600 text-sm font-medium">エラー: {error}</p>
-              <p className="text-red-500 text-xs mt-1">楽観的更新が自動的に元に戻されました</p>
+            <div className="mt-4 rounded-lg border border-red-200 bg-red-50 p-4">
+              <p className="text-sm font-medium text-red-600">エラー: {error}</p>
+              <p className="mt-1 text-xs text-red-500">楽観的更新が自動的に元に戻されました</p>
             </div>
           )}
-          <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-            <p className="text-gray-700 text-sm mb-2">
+          <div className="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <p className="mb-2 text-sm text-gray-700">
               <strong>楽観的更新の動作:</strong>{' '}
               フォーム送信後、サーバー応答を待たずにユーザーリストに即座に追加されます。
               エラーが発生した場合、自動的に元の状態に戻ります。
             </p>
-            <p className="text-gray-700 text-sm">
+            <p className="text-sm text-gray-700">
               <strong>アクションオブジェクトパターン:</strong>{' '}
-              <code className="bg-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">
+              <code className="rounded bg-gray-200 px-1.5 py-0.5 font-mono text-xs">
                 {'{ type: "add", data: {...} }'}
               </code>{' '}
               のような形式で、複数の操作（add, update, delete）を一つのreducerで処理できます。

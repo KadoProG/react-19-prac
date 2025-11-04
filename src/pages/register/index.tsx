@@ -22,19 +22,19 @@ export const Register = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-          <h1 className="text-2xl font-bold text-gray-900 text-center mb-8">ユーザー登録</h1>
+        <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+          <h1 className="mb-8 text-center text-2xl font-bold text-gray-900">ユーザー登録</h1>
           <form
             onSubmit={handleSubmit}
-            className={`space-y-6 ${isPending ? 'opacity-75 pointer-events-none' : ''}`}
+            className={`space-y-6 ${isPending ? 'pointer-events-none opacity-75' : ''}`}
             aria-disabled={isPending}
           >
             <div>
               <label
                 htmlFor="name"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 名前
               </label>
@@ -45,14 +45,14 @@ export const Register = () => {
                 placeholder="名前を入力してください"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 メールアドレス
               </label>
@@ -64,14 +64,14 @@ export const Register = () => {
                 autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <div>
               <label
                 htmlFor="password"
-                className={`block text-sm font-medium mb-2 transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
+                className={`mb-2 block text-sm font-medium transition-colors ${isPending ? 'text-gray-400' : 'text-gray-700'}`}
               >
                 パスワード
               </label>
@@ -83,18 +83,18 @@ export const Register = () => {
                 autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-gray-500 outline-none transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed disabled:border-gray-200"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all duration-200 outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-400 disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-500"
                 disabled={isPending}
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 flex items-center justify-center gap-2"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-3 font-medium text-white transition-colors hover:bg-gray-800 focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:bg-gray-400"
               disabled={isPending}
             >
               {isPending && (
                 <svg
-                  className="animate-spin h-5 w-5 text-white"
+                  className="h-5 w-5 animate-spin text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
