@@ -247,7 +247,9 @@ export const Register3 = () => {
             </p>
             <p className="text-gray-700 text-sm">
               <strong>アクションオブジェクトパターン:</strong>{' '}
-              <code className="bg-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">{'{ type: "add", data: {...} }'}</code>{' '}
+              <code className="bg-gray-200 px-1.5 py-0.5 rounded text-xs font-mono">
+                {'{ type: "add", data: {...} }'}
+              </code>{' '}
               のような形式で、複数の操作（add, update, delete）を一つのreducerで処理できます。
               これは複数の操作タイプを扱う場合に推奨されるパターンです。
             </p>
