@@ -4,6 +4,7 @@ import About from './pages/about';
 import { Register } from './pages/register';
 import { Register2 } from './pages/register-2';
 import { Register3 } from './pages/register-3';
+import { UseExample } from './pages/use-example';
 
 export const MyRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const MyRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/register2" element={<Register2 />} />
         <Route path="/register3" element={<Register3 />} />
+        <Route path="/use-example" element={<UseExample />} />
       </Routes>
     </BrowserRouter>
   );

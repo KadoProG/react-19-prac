@@ -39,6 +39,13 @@ const Home = () => {
                 <span className="font-medium">Register3ページ</span>
                 <span className="text-sm text-gray-500 block mt-1">useOptimistic使用</span>
               </Link>
+              <Link
+                to="/use-example"
+                className="block px-6 py-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors text-gray-700 hover:text-gray-900"
+              >
+                <span className="font-medium">UseExampleページ</span>
+                <span className="text-sm text-gray-500 block mt-1">use使用</span>
+              </Link>
             </div>
           </nav>
         </div>
