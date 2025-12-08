@@ -60,6 +60,13 @@ const Home = () => {
                 <span className="font-medium">UseLayoutEffectページ</span>
                 <span className="mt-1 block text-sm text-gray-500">useLayoutEffect使用</span>
               </Link>
+              <Link
+                to="/use-sync-external-store"
+                className="block rounded-lg border border-gray-200 bg-gray-50 px-6 py-4 text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900"
+              >
+                <span className="font-medium">UseSyncExternalStoreページ</span>
+                <span className="mt-1 block text-sm text-gray-500">useSyncExternalStore使用</span>
+              </Link>
             </div>
           </nav>
         </div>

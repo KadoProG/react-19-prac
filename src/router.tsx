@@ -7,6 +7,7 @@ import { Register3 } from './pages/register-3';
 import { UseExample } from './pages/use-example';
 import { SeparatingEventsFromEffects } from './pages/separating-events-from-effects';
 import { UseLayoutEffect } from './pages/use-layout-effect';
+import { UseSyncExternalStore } from './pages/use-sync-external-store';
 
 export const MyRouter = () => {
   return (
@@ -20,6 +21,7 @@ export const MyRouter = () => {
         <Route path="/use-example" element={<UseExample />} />
         <Route path="/separating-events-from-effects" element={<SeparatingEventsFromEffects />} />
         <Route path="/use-layout-effect" element={<UseLayoutEffect />} />
+        <Route path="/use-sync-external-store" element={<UseSyncExternalStore />} />
       </Routes>
     </BrowserRouter>
   );
