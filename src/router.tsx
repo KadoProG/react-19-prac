@@ -8,6 +8,7 @@ import { UseExample } from './pages/use-example';
 import { SeparatingEventsFromEffects } from './pages/separating-events-from-effects';
 import { UseLayoutEffect } from './pages/use-layout-effect';
 import { UseSyncExternalStore } from './pages/use-sync-external-store';
+import { UseSyncExternalStoreWindowResize } from './pages/use-sync-external-store-window-resize';
 
 export const MyRouter = () => {
   return (
@@ -22,6 +23,10 @@ export const MyRouter = () => {
         <Route path="/separating-events-from-effects" element={<SeparatingEventsFromEffects />} />
         <Route path="/use-layout-effect" element={<UseLayoutEffect />} />
         <Route path="/use-sync-external-store" element={<UseSyncExternalStore />} />
+        <Route
+          path="/use-sync-external-store-window-resize"
+          element={<UseSyncExternalStoreWindowResize />}
+        />
       </Routes>
     </BrowserRouter>
   );
