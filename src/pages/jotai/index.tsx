@@ -28,6 +28,7 @@ import { TodoExample } from './components/TodoExample';
 import { DerivedAtomExample } from './components/DerivedAtomExample';
 import { AsyncAtomExample } from './components/AsyncAtomExample';
 import { UseStateVsJotaiExample } from './components/UseStateVsJotaiExample';
+import { UseContextVsJotaiExample } from './components/UseContextVsJotaiExample';
 
 export const Jotai = () => {
   return (
@@ -82,6 +83,7 @@ export const Jotai = () => {
 
         <div className="space-y-6">
           <UseStateVsJotaiExample />
+          <UseContextVsJotaiExample />
           <CounterExample />
           <CounterDisplay />
           <TodoExample />
