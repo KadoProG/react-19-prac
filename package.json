@@ -13,6 +13,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "jotai": "^2.15.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-router-dom": "^7.9.5",

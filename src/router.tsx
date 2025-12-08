@@ -9,6 +9,7 @@ import { SeparatingEventsFromEffects } from './pages/separating-events-from-effe
 import { UseLayoutEffect } from './pages/use-layout-effect';
 import { UseSyncExternalStore } from './pages/use-sync-external-store';
 import { UseSyncExternalStoreWindowResize } from './pages/use-sync-external-store-window-resize';
+import { Jotai } from './pages/jotai';
 
 export const MyRouter = () => {
   return (
@@ -27,6 +28,7 @@ export const MyRouter = () => {
           path="/use-sync-external-store-window-resize"
           element={<UseSyncExternalStoreWindowResize />}
         />
+        <Route path="/jotai" element={<Jotai />} />
       </Routes>
     </BrowserRouter>
   );
