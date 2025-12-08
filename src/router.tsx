@@ -6,6 +6,7 @@ import { Register2 } from './pages/register-2';
 import { Register3 } from './pages/register-3';
 import { UseExample } from './pages/use-example';
 import { SeparatingEventsFromEffects } from './pages/separating-events-from-effects';
+import { UseLayoutEffect } from './pages/use-layout-effect';
 
 export const MyRouter = () => {
   return (
@@ -18,6 +19,7 @@ export const MyRouter = () => {
         <Route path="/register3" element={<Register3 />} />
         <Route path="/use-example" element={<UseExample />} />
         <Route path="/separating-events-from-effects" element={<SeparatingEventsFromEffects />} />
+        <Route path="/use-layout-effect" element={<UseLayoutEffect />} />
       </Routes>
     </BrowserRouter>
   );
