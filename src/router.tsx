@@ -10,6 +10,7 @@ import { UseLayoutEffect } from './pages/use-layout-effect';
 import { UseSyncExternalStore } from './pages/use-sync-external-store';
 import { UseSyncExternalStoreWindowResize } from './pages/use-sync-external-store-window-resize';
 import { Jotai } from './pages/jotai';
+import { ImeEnterComparison } from './pages/ime-enter-comparison';
 
 export const MyRouter = () => {
   return (
@@ -29,6 +30,7 @@ export const MyRouter = () => {
           element={<UseSyncExternalStoreWindowResize />}
         />
         <Route path="/jotai" element={<Jotai />} />
+        <Route path="/ime-enter-comparison" element={<ImeEnterComparison />} />
       </Routes>
     </BrowserRouter>
   );
