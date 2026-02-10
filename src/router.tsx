@@ -11,6 +11,7 @@ import { UseSyncExternalStore } from './pages/use-sync-external-store';
 import { UseSyncExternalStoreWindowResize } from './pages/use-sync-external-store-window-resize';
 import { Jotai } from './pages/jotai';
 import { ImeEnterComparison } from './pages/ime-enter-comparison';
+import { CounterVerification } from './pages/counter-verification';
 
 export const MyRouter = () => {
   return (
@@ -31,6 +32,7 @@ export const MyRouter = () => {
         />
         <Route path="/jotai" element={<Jotai />} />
         <Route path="/ime-enter-comparison" element={<ImeEnterComparison />} />
+        <Route path="/counter-verification" element={<CounterVerification />} />
       </Routes>
     </BrowserRouter>
   );
